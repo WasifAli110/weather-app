@@ -1,26 +1,43 @@
-let myInput = document.querySelector("#myInput");
-let screenParagraph = document.querySelector("#myPara");
-let form = document.querySelector("#weatherForm");
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
+//selector variable
+var inputval = document.querySelector('#cityinput')
+console.log(inputval);
+var btn = document.querySelector('#add');
+console.log(btn);
+var city = document.querySelector('#cityoutput')
+console.log(city);
+var descrip = document.querySelector('#description')
+console.log(descrip);
+var temp = document.querySelector('#temp')
+console.log(temp);
+var wind = document.querySelector('#wind')
+console.log(wind);
 
-    let temp = Number(myInput.value); // temperature
 
-    let condition = temp > 24;
-  
-    // console.log("🚀 ~ condition:", condition);
-  
-    if (condition) {
-      screenParagraph.innerText = "Today weather is hot";
-  
-      console.log("Today weather is hot");
-    } else {
-      screenParagraph.innerText = "Today weather is cold";
-  
-      console.log("Today weather is cold");
-    }
-  
-    // 	console.log("button per click hua hy");
-    // 	console.log("button per click hua hy");
-  });    
+// Get your own free OWM API key at https://www.openweathermap.org/appid - please do not re-use mine!
+// You don't need an API key for this to work at the moment, but this will change eventually.
+apik = "3045dd712ffe6e702e3245525ac7fa38"
+//kelvin to celcious
+function convertion(val){
+    return (val - 273).toFixed(2)
+}
+//fetch
+    btn.addEventListener('click', function(){
+        fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputval.value+'&appid='+apik)
+        .then(res => res.json())
+         //.then(data => console.log(data))
+        .then(data => {
+            var nameval = data['name']
+            var descrip = data['weather']['0']['description']
+            var tempature = data['main']['temp']
+            var wndspd = data['wind']['speed']
+
+            city.innerHTML=`City: ${nameval}`
+            temp.innerHTML = `Temperature: ${ convertion(tempature)} C`
+            description.innerHTML = `Conditions: ${descrip}`
+            wind.innerHTML = `Wind Speed: ${wndspd} km/h`
+
+        })
+        .catch(err => alert('You entered Wrong city name'))
+    })
+
