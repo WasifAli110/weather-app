@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather app</title>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
-  <img src="https://img.freepik.com/free-vector/sky-background-video-conferencing_23-2148639325.jpg" alt="background-image" class="background">
-    <div class="box">
-      <div class="box1">
-        <img src="https://play-lh.googleusercontent.com/Nwn4J-GZ0UTSZW1zypE-0ABFVGxfjNWkqrvSpNoWhNRh2y_EIx-KukwW5GgtB5sF3g" alt="weather img">
-        <div class="input">
-          <form id="weatherForm">
-            <input id="myInput" type="number" placeholder="weather temperature" />
-            <button type="submit">Check</button>
-          </form>
-      
-          <p id="myPara">Today weather update </p>
+    <div class="container-fluid">
+        <div class="row offset-sm-1">
+            <!-- Header part -->
+            <section class="header col-md-4 col-sm-10 ">
+                <h1> Weather App</h1>
+                <p>Coded with <span style='font-size:50px;'>&#9748;</span> By <a href="https://github.com/WasifAli110" target="_blank">Wasif Ali</a></p>
+            </section>
+
+            <section class="main col-md-7 col-sm-10  ">
+            <!-- input section -->
+            <section class="inputs">
+                <input type="text" placeholder="Enter any city..." id="cityinput">
+                <input type="submit" value="Submit" id="add">
+            <button placeholder="submit" id="add"></button>
+            </section>
+
+            <!-- Display section -->
+            <section class="display">
+                <div class="wrapper">
+                    <h2 id="cityoutput"></h2>
+                    <p id="description"></p>
+                    <p id="temp"></p>
+                    <p id="wind"></p>
+
+                </div>
+            </section>
+            </section>
         </div>
-      </div>
     </div>
-    <script src="app.js"></script>
+
+    <script type="text/javascript" src="./main.js"></script>
 </body>
 </html>
