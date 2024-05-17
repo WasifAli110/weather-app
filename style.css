@@ -1,77 +1,121 @@
-body{
-    margin: 0%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-img{
-    width: 100%;
-    height: 850px;
+/* --------------------background */
+.container-fluid {
+    /* margin: 0%; */
+    background-image: url(https://pics.craiyon.com/2023-10-14/f989258793a54fc7a9647d892594611c.webp);
+    background-size: cover;
+    /* margin-bottom: 0px; */
+    height: auto;
+    /* max-height:200vh; */
 }
 
-.box{
-    border: 2px solid black;
-    width: 25%;
-    height: 23rem;
-    position: absolute;
-    right: 34%;
-    bottom: 0%;
+.row {
+    padding-top: 5.5rem;
+    padding-bottom: 5rem;
+
 }
 
-.box1 img{
-    width: 100%;
-    height: 23rem;
+/* -----------------------------header */
+.header {
+    background-image: url(WhatsApp\ Image\ 2024-03-02\ at\ 8.51.14\ PM.jpeg);
+    background-size: cover;
+    background-position: relative;
+    color: rgb(12, 11, 6);
+    text-align: center;
+    padding: 5rem;
 }
 
-.input{
-    position: absolute;
-    top: 82%;
+.header h1 {
+    font-weight: 500;
+    font-size: 34px;
+    font-family: serif;
+    color: #e4eff7;
 }
 
-.input #weatherForm #myInput{
-    position: absolute;
-    top: 80%;
-    border-radius: 5px;
-    height: 18px;
+.header p {
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 1.5 rem;
+    color: #e4eff7;
 }
 
-.input #weatherForm button{
-    position: absolute;
-    left: 125%;
-    top:77%;
-    height: 25px;
-    border-radius: 5px;
+a:hover,
+a:visited,
+a:link,
+a:active {
+    text-decoration: none;
+    color: #d0e5f5;
 }
 
-/* this is my web page media query  size for laptop*/
-@media screen and (max-width:700px){
-    .box{
-        width: 44%;
-        position: absolute;
-        right: 26%;
-        top: 50%;
-        height: 23rem
-    }
+.main {
+    /* background-image: linear-gradient(#424242, #757575); */
+    background-color: #212121;
 
-    .box1 img{
-        width: 100%;
-        height: 23rem;
-    }
-     
-    .input #weatherForm #myInput{
-        position: absolute;
-        top: 70%;
-        border-radius: 5px;
-        height: 20px;
-    }
-    
-    .input #weatherForm button{
-        position: absolute;
-        left: 125%;
-        top: 70%;
-        height: 25px;
-    }
 
-  body img{
-    width: 100%;
-    height: 848px;
-  }
+}
+
+/* --------------------------------input section */
+.inputs {
+    padding: 6rem 0 2rem 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.inputs input[type="text"] {
+    height: 3.5rem;
+    width: 30rem;
+    background: #212121;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border: none;
+    background-color: transparent;
+    border-bottom: solid 1px #16a864;
+    color: #16a864;
+    border-radius: 2px;
+    margin-right: 4px;
+
+}
+
+.inputs input[type="submit"] {
+    height: 3.5rem;
+    width: 6.5rem;
+    background: #16a864;
+    font-weight: bold;
+    color: ghostwhite;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 2px;
+}
+
+/* -------------------------------display */
+.display {
+    text-align: center;
+    color: #16a864;
+}
+
+.wrapper {
+    margin: 0 9rem;
+    width: 50%;
+    background-color: #212121;
+    height: 40vh;
+    margin: 50px auto;
+    border-radius: 2px;
+}
+
+.wrapper h2 {
+    padding: 5px 0;
+    text-align: center;
+}
+
+.wrapper p {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 20px;
 }
